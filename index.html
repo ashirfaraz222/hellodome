@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+          font-family: sans-serif;
+        }
+        .calculator{
+         height: 560px;
+         width: 340px;
+         border: solid 1px black;
+         margin: 50px auto;
+         border-radius: 20px;
+         background-color: black;
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+        }
+        .screen{
+            height: 60px;
+            width: 270px;
+            color: white;
+                        font-size: 30px;
+                        display: flex;
+                        align-items: center;
+                        border-radius: 10px;
+                        justify-content: end;
+                        margin-top: 10px;
+        }
+        .buttons{
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px 20px;
+            gap: 10px;
+            justify-content: center;
+        }
+        button{
+            height: 50px;
+            width: 50px;
+            display: block;
+            gap: 20px;
+            border-radius: 50%;
+            font-size: 30px;
+        }
+        .btn1{
+             height: 65px;
+            width: 65px;
+            display: block;
+            color: white;
+            gap: 20px;
+            border-radius: 50%;
+            font-size: 25px;
+            background-color: rgb(212, 139, 3);
+            border: solid 2px rgb(212, 139, 3);
+        }
+         .btn2{
+             height: 65px;
+            width: 65px;
+            display: block;
+            gap: 20px;
+            border-radius: 50%;
+            font-size: 25px;
+            background-color: rgb(173, 172, 172);
+            border: solid 2px rgb(173, 172, 172);
+            
+        }
+         .btn3{
+             height: 65px;
+            width: 65px;
+            display: block;
+            gap: 20px;
+            border-radius: 50%;
+            font-size: 25px;
+            background-color: rgb(51, 51, 51);
+            color: white;
+            border: solid 2px rgb(51, 51, 51);
+          
+        }
+        .text{
+            height: 60px;
+            width: 300px;
+            background-color: white;
+            margin-top: 20px;
+            border-radius: 15px;
+            font-size: 28px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+         
+   
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+        <div class="text"><p>Welcome to Calculator</p></div>
+        <div class="screen">0</div>
+        <div class="buttons">
+
+            <button class="btn2" onclick="add(1)">1</button>
+            <button class="btn2" onclick="add(2)">2</button>
+            <button class="btn2" onclick="add(3)">3</button>
+            <button class="btn1" onclick="add('+')">+</button>
+            <button class="btn3" onclick="add(4)">4</button>
+            <button class="btn3" onclick="add(5)">5</button>
+            <button class="btn3" onclick="add(6)">6</button>
+            <button class="btn1" onclick="add('-')">-</button>
+            <button class="btn3" onclick="add(7)">7</button>
+            <button class="btn3" onclick="add(8)">8</button>
+            <button class="btn3" onclick="add(9)">9</button>
+            <button class="btn1" onclick="add('*')">*</button>
+            <button class="btn3" onclick="add(0)">0</button>
+            <button class="btn3" onclick="add('00')">00</button>
+
+            <button class="btn3" onclick="add('.')">.</button>
+            <button class="btn1" onclick="Clear()">C</button>
+            <button class="btn3" onclick="add('/')">/</button>
+            <button class="btn3" onclick="Delete()">Del</button>
+            <button class="btn3" onclick="add('000')">000</button>
+                        <button class="btn1" onclick="calculate()">=</button>
+
+
+
+
+        </div>
+    </div>
+
+    <script>
+
+        var screen  = document.querySelector('.screen')
+        var button = document.querySelector('.btn1')
+
+      
+        function Delete(){
+            screen.innerText = screen.innerText.slice(0,-1)
+                new Audio('aa.wav').play()
+
+        }
+        function add(a){
+            screen.innerText += a
+    new Audio('aa.wav').play()
+
+        }
+        function Clear() {
+            screen.innerText = ''
+                new Audio('aa.wav').play()
+
+        }
+        function calculate(){
+            screen.innerText = eval(screen.innerText)
+                new Audio('kamlee.mp3').play()
+
+        }
+
+        document.addEventListener('keydown' , function(k){
+            if(k.key == '1'){
+                screen.innerText += '1'
+    new Audio('aa.wav').play()
+    
+            }
+            if(k.key == '2'){
+                screen.innerText += '2'
+    new Audio('aa.wav').play()
+
+            }
+             if(k.key == '3'){
+                screen.innerText += '3'
+                    new Audio('aa.wav').play()
+
+            } if(k.key == '4'){
+                screen.innerText += '4'
+                    new Audio('aa.wav').play()
+
+            } if(k.key == '5'){
+                screen.innerText += '5'
+                    new Audio('aa.wav').play()
+
+            } if(k.key == '6'){
+                screen.innerText += '6'
+                    new Audio('aa.wav').play()
+
+            } if(k.key == '7'){
+                screen.innerText += '7'
+                    new Audio('aa.wav').play()
+
+            } if(k.key == '8'){
+                screen.innerText += '8'
+                    new Audio('aa.wav').play()
+
+            } if(k.key == '9'){
+                screen.innerText += '9'
+                    new Audio('aa.wav').play()
+
+            } if(k.key == '0'){
+                screen.innerText += '0'
+                    new Audio('aa.wav').play()
+
+            } if(k.key == '+'){
+                screen.innerText += '+'
+                    new Audio('aa.wav').play()
+
+            } if(k.key == '-'){
+                screen.innerText += '-'
+                    new Audio('aa.wav').play()
+
+            } if(k.key == '/'){
+                screen.innerText += '/'
+                    new Audio('aa.wav').play()
+
+            } if(k.key == '*'){
+                screen.innerText += '*'
+                    new Audio('aa.wav').play()
+
+            }
+             if(k.key == '.'){
+                screen.innerText += '.'
+                    new Audio('aa.wav').play()
+
+            }
+             if (k.key == "=") {
+      screen.innerText = eval(screen.innerText)
+          new Audio('aa.wav').play()
+
+
+      }
+            if(k.key == 'Backspace'){
+            screen.innerText = screen.innerText.slice(0,-1)
+                new Audio('aa.wav').play()
+
+            }
+            if(k.key == 'Delete'){
+                            screen.innerText = ''
+                                new Audio('aa.wav').play()
+
+
+            }
+           
+        })
+    </script>
+</body>
+</html>
